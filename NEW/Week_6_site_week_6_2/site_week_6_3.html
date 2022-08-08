@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: grid;
+        grid-template-areas:
+          "nav header header header header"
+          "nav main main main main"
+          "nav main main main main"
+          "nav main main main main"
+          "nav main main main main";
+        grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-gap: 10px;
+        height: 100vh;
+        margin: 30px;
+      }
+      header {
+        grid-area: header;
+        height: 10vh;
+      }
+      .header_in {
+        display: grid;
+        grid-template-rows: 0.5fr;
+        grid-template-columns: 4fr 4fr;
+      }
+      .nav_header {
+      }
+      .search {
+        padding: 5px 15px; /* Поля вокруг */
+        display: inline-block; /* Ширина соответствует содержимому */
+        border: 1px solid #ffffff; /* Параметры рамки */
+        border-radius: 20px; /* Скругляем рамку */
+      }
+      [type="search"] {
+        border: none;
+        outline: none; /* Убираем рамку */
+      }
+      .zoom {
+        border: none; /* Убираем рамку */
+        background: transparent; /* Убираем фон */
+        width: 20px;
+        height: 20px; /* Размеры картинки */
+        vertical-align: middle; /* Выравниваем по центру */
+        padding: 0; /* Убираем поля для IE */
+      }
+      .zoom::before {
+        content: url(assets_1/images/search.png); /* Выводим картинку */
+      }
+      .form {
+        grid-column: 1/2;
+      }
+      .nav_aside {
+        grid-area: nav;
+        width: 252px;
+      }
+      .nav_1 {
+        display: block;
+        width: 24em;
+        padding: 10px;
+        margin: 10px;
+      }
+
+      main {
+        grid-area: main;
+      }
+      .inner-grid {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(4, minmax(200px, 260px));
+        grid-template-rows: repeat(4, 180px);
+        grid-template-areas:
+            "a1 a1 a3 a4"
+            "a2 a2 a3 a4"
+            "a5 a6 a7 a7"
+            "a5 a6 a8 a8";
+            gap: 20px;
+      }
+      @media (max-width: 889px) {
+        .inner-grid {
+          grid-template-columns: repeat(2, minmax(180px, 260px));
+          grid-template-rows: repeat(8, 180px);
+          grid-template-areas:
+            "a1 a1"
+            "a2 a2"
+            "a3 a4"
+            "a3 a4"
+            "a5 a5"
+            "a6 a6"
+            "a7 a8"
+            "a7 a8";
+            gap: 20px;
+        }
+      }
+      @media (max-width: 409px) {
+        .inner-grid {
+          width: 100%;
+          grid-template-columns: 1fr;
+          grid-template-rows: repeat(12, 140px);
+          grid-template-areas:
+            "a1"
+            "a2"
+            "a3"
+            "a3"
+            "a4"
+            "a4"
+            "a7"
+            "a8"
+            "a5"
+            "a5"
+            "a6"
+            "a6";
+            gap: 20px;
+        }
+        gap: 20px;
+      }
+      .a1 {
+        grid-area: a1;
+      }
+      .a2 {
+        grid-area: a2;
+      }
+      .a3 {
+        grid-area: a3;
+      }
+      .a4 {
+        grid-area: a4;
+      }
+      .a5 {
+        grid-area: a5;
+      }
+      .a6 {
+        grid-area: a6;
+      }
+      .a7 {
+        grid-area: a7;
+      }
+      .a8 {
+        grid-area: a;
+      }
+      .nav_1 {
+        list-style-type: none;
+      }
+      a {
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header_in">
+        <form class="form">
+          <div class="search">
+            <button class="zoom"></button>
+            <input type="search" name="s" placeholder="Search store" />
+          </div>
+        </form>
+        <nav class="nav_header">
+          <a href="#products"><span style="color: black">products</span></a>
+          <a href="#story"><span style="color: black">story</span></a>
+          <a href="#manufacturing"
+            ><span style="color: black">manufacturing</span></a
+          >
+          <a href="#packaging"><span style="color: black">packaging</span></a>
+          <a href="basket.html"
+            ><img src="assets_1/images/basket.png" alt="1"
+          /></a>
+          <a href="person.html"
+            ><img src="assets_1/images/person.png" alt="1"
+          /></a>
+        </nav>
+      </div>
+    </header>
+    <nav class="nav_aside">
+      <img src="assets_1/images/Logo.png" alt="logo" />
+      <h2>Explore</h2>
+      <ul class="nav_1">
+        <li>
+          <img src="./assets_1/images/new.png" alt="new_in" /><a
+            href="new_in.html"
+            ><span style="color: black">New In</span></a
+          >
+        </li>
+        <li>
+          <img src="./assets_1/images/clothing.png" alt="clothing" /><a
+            href="clothing.html"
+            ><span style="color: black">Clothing</span></a
+          >
+        </li>
+        <li>
+          <img src="./assets_1/images/shoes.png" alt="shoes" /><a
+            href="shoes.html"
+            ><span style="color: black">Shoes</span></a
+          >
+        </li>
+        <li>
+          <img src="./assets_1/images/accessories.png" alt="accessories" /><a
+            href="accessories.html"
+            ><span style="color: black">Accessories</span></a
+          >
+        </li>
+        <li>
+          <img src="./assets_1/images/activewear.png" alt="activewear" /><a
+            href="activewear.html"
+            ><span style="color: black">Activewear</span></a
+          >
+        </li>
+        <li>
+          <img src="./assets_1/images/gifts.png" alt="gifts" /><a
+            href="gifts.html"
+            ><span style="color: black">Gifts & Living</span></a
+          >
+        </li>
+        <li>
+          <img src="./assets_1/images/inspiration.png" alt="inspiration" /><a
+            href="inspiration.html"
+            ><span style="color: black">Inspiration</span></a
+          >
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <div class="inner-grid">
+        <div class="a1">
+          <a href="1.html"><img src="assets_1/images/1.png" alt="1" /></a>
+        </div>
+        <div class="a2">
+          <a href="2.html"><img src="assets_1/images/2.png" alt="2" /></a>
+        </div>
+        <div class="a3">
+          <a href="3.html"><img src="assets_1/images/3.png" alt="3" /></a>
+        </div>
+        <div class="a4">
+          <a href="4.html"><img src="assets_1/images/4.png" alt="4" /></a>
+        </div>
+        <div class="a5">
+          <a href="5.html"><img src="assets_1/images/5.png" alt="5" /></a>
+        </div>
+        <div class="a6">
+          <a href="6.html"><img src="assets_1/images/6.png" alt="6" /></a>
+        </div>
+        <div class="a7">
+          <a href="7.html"><img src="assets_1/images/7.png" alt="7" /></a>
+        </div>
+        <div class="a8">
+          <a href="8.html"><img src="assets_1/images/8.png" alt="8" /></a>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

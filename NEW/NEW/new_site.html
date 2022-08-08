@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/styles/normalize.css" />
+    <style>
+      .cards-grid {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(4, minmax(200px, 260px));
+        grid-template-rows: repeat(4, 180px);
+        grid-template-areas:
+          "wide1 wide1 product1 product2"
+          "wide2 wide2 product1 product2"
+          "product3 product4 wide3 wide3"
+          "product3 product4 wide4 wide4";
+      }
+
+      @media (max-width: 889px) {
+        .cards-grid {
+          grid-template-columns: repeat(2, minmax(180px, 260px));
+          grid-template-rows: repeat(8, 180px);
+          grid-template-areas:
+            "wide1 wide1"
+            "wide2 wide2"
+            "product1 product2"
+            "product1 product2"
+            "wide3 wide3"
+            "wide4 wide4"
+            "product3 product4"
+            "product3 product4";
+        }
+      }
+      @media (max-width: 409px) {
+        .cards-grid {
+          width: 100%;
+          grid-template-columns: 1fr;
+          grid-template-rows: repeat(12, 140px);
+          grid-template-areas:
+            "wide1"
+            "wide2"
+            "product1"
+            "product1"
+            "product2"
+            "product2"
+            "wide3"
+            "wide4"
+            "product3"
+            "product3"
+            "product4"
+            "product4";
+        }
+      }
+
+      .card-demo_sale-1 {
+        grid-area: wide1;
+      }
+      .card-demo_sale-2 {
+        grid-area: wide2;
+      }
+      .card-demo_product-1 {
+        grid-area: product1;
+      }
+      .card-demo_product-2 {
+        grid-area: product2;
+      }
+      .card-demo_product-3 {
+        grid-area: product3;
+      }
+      .card-demo_product-4 {
+        grid-area: product4;
+      }
+      .card-demo_sale-3 {
+        grid-area: wide3;
+      }
+      .card-demo_sale-4 {
+        grid-area: wide4;
+      }
+
+      .card-demo_sale-1,
+      .card-demo_sale-2,
+      .card-demo_product-1,
+      .card-demo_product-2,
+      .card-demo_sale-3,
+      .card-demo_sale-4,
+      .card-demo_product-3,
+      .card-demo_product-4 {
+        background-color: coral;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cards-grid">
+      <div class="card-demo_sale-1">sale-1</div>
+      <div class="card-demo_sale-2">sale-2</div>
+      <div class="card-demo_product-1">product-1</div>
+      <div class="card-demo_product-2">product-2</div>
+
+      <div class="card-demo_sale-3">sale-3</div>
+      <div class="card-demo_sale-4">sale-4</div>
+      <div class="card-demo_product-3">product-3</div>
+      <div class="card-demo_product-4">product-4</div>
+    </div>
+  </body>
+</html>
