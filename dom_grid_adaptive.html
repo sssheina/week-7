@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/styles/normalize.css" />
+    <style>
+      body {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        grid-template-rows: 10% 1fr 10%;
+        grid-template-areas:
+          "header header"
+          "main aside"
+          "footer footer";
+        height: 100vh;
+      }
+      .header {
+        grid-area: header;
+        background: #e0e0e0;
+        text-align: center;
+      }
+      aside {
+        grid-area: aside;
+      }
+      .sidebar {
+        background: #ddeccb;
+        text-align: center;
+      }
+      main {
+        grid-area: main;
+        background: #fff8e3;
+      }
+      .maingridcontainer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas:
+          "h2 h2"
+          "section1 section2"
+          "section3 section3";
+        height: 80vh;
+        gap: 30px;
+      }
+      .h2 {
+        grid-area: h2;
+        text-align: center;
+        padding: 10px;
+      }
+      .section1 {
+        background: #feeab9;
+        grid-area: section1;
+        margin: 30px;
+        padding: 10px;
+        text-align: center;
+      }
+
+      .section2 {
+        background: #feeab9;
+        grid-area: section2;
+        margin: 30px;
+        padding: 10px;
+        text-align: center;
+      }
+      .section3 {
+        background: #feeab9;
+        grid-area: section3;
+        margin: 30px;
+        padding: 10px;
+        text-align: center;
+      }
+      footer {
+        grid-area: footer;
+        background: #e0e0e0;
+      }
+      .footercontainergrid {
+        display: grid;
+        grid-template-columns: repeat(4 1fr);
+        grid-template-rows: 1fr;
+      }
+      .nav1 {
+        background: #ffffff;
+        grid-column: 1/2;
+        text-align: center;
+        padding: 10px;
+        margin: 30px;
+      }
+      .nav2 {
+        background: #ffffff;
+        grid-column: 2/3;
+        text-align: center;
+        padding: 10px;
+        margin: 30px;
+      }
+      .nav3 {
+        background: #ffffff;
+        grid-column: 3/4;
+        text-align: center;
+        padding: 10px;
+        margin: 30px;
+      }
+      .nav4 {
+        background: #ffffff;
+        grid-column: 4/5;
+        text-align: center;
+        padding: 10px;
+        margin: 30px;
+      }
+
+      @media screen and (max-width: 889px) {
+        body {
+          display: grid;
+          grid-template-columns: 3fr 1fr;
+          grid-template-rows: 10% 1fr 10%;
+          grid-template-areas:
+            "header header"
+            "main aside"
+            "footer footer";
+        }
+      }
+
+      @media screen and (max-width: 409px) {
+        body {
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-template-rows: 10% repeat(5, 1fr);
+          height: 100vh;
+          grid-template-areas:
+            "header"
+            "main"
+            "main"
+            "main"
+            "main"
+            "aside";
+        }
+
+        .maingridcontainer {
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-template-rows: repeat(4, 1fr);
+          grid-template-areas:
+            "h2"
+            "section1"
+            "section2"
+            "section3";
+        }
+        .footer {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header"><h1>[Шапка страницы]</h1></header>
+    <main>
+      <div class="maingridcontainer">
+        <div class="h2"><h2>[Основная часть]</h2></div>
+        <section class="section1">[Ещё 1]</section>
+        <section class="section2">[Ещё 2]</section>
+        <section class="section3">[Ещё 3]</section>
+      </div>
+    </main>
+    <aside class="sidebar"><h3>[Боковая часть]</h3></aside>
+    <footer>
+      <div class="footercontainergrid">
+        <nav class="nav1">[Секция футера 1]</nav>
+        <nav class="nav2">[Секция футера 2]</nav>
+        <nav class="nav3">[Секция футера 3]</nav>
+        <nav class="nav4">[Секция футера 4]</nav>
+      </div>
+    </footer>
+  </body>
+</html>
